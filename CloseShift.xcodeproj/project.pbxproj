@@ -56,15 +56,47 @@
 		EE9B47642713097B0005D65F /* CloseShift */ = {
 			isa = PBXGroup;
 			children = (
-				EE9B47652713097B0005D65F /* AppDelegate.swift */,
-				EE9B47672713097B0005D65F /* SceneDelegate.swift */,
-				EE9B47692713097B0005D65F /* ViewController.swift */,
-				EE9B476B2713097B0005D65F /* Main.storyboard */,
-				EE9B476E2713097C0005D65F /* Assets.xcassets */,
-				EE9B47702713097C0005D65F /* LaunchScreen.storyboard */,
-				EE9B47732713097C0005D65F /* Info.plist */,
+				EE9B477C27130DC20005D65F /* ViewControllers */,
+				EE9B477927130C6C0005D65F /* Storyboards */,
+				EE9B477A27130C910005D65F /* App */,
+				EE9B477B27130D500005D65F /* Resources */,
 			);
 			path = CloseShift;
+			sourceTree = "<group>";
+		};
+		EE9B477927130C6C0005D65F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EE9B476B2713097B0005D65F /* Main.storyboard */,
+				EE9B47702713097C0005D65F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EE9B477A27130C910005D65F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EE9B47652713097B0005D65F /* AppDelegate.swift */,
+				EE9B47672713097B0005D65F /* SceneDelegate.swift */,
+				EE9B47732713097C0005D65F /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EE9B477B27130D500005D65F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE9B476E2713097C0005D65F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE9B477C27130DC20005D65F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE9B47692713097B0005D65F /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W783WY8SJ8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CloseShift/Info.plist;
+				INFOPLIST_FILE = CloseShift/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -306,7 +338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W783WY8SJ8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CloseShift/Info.plist;
+				INFOPLIST_FILE = CloseShift/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +366,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
