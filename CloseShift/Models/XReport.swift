@@ -10,9 +10,9 @@ import Foundation
 struct XReport {
     
     // MARK: - Public Properties
-    var totalRevenue: Double = 0
-    var nonCash: Double = 0
-    var expenses: Double = 0
+    var totalRevenue = 0.0
+    var nonCash = 0.0
+    var expenses = 0.0
     
     var description: String {
         """
