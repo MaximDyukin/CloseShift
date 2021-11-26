@@ -33,18 +33,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE0A4232275129F100934E82 /* Model */ = {
+		EE0A4232275129F100934E82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		EE0A423327512A0800934E82 /* View */ = {
+		EE0A42342751381E00934E82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EE9B47592713097B0005D65F = {
@@ -66,8 +66,8 @@
 		EE9B47642713097B0005D65F /* CloseShift */ = {
 			isa = PBXGroup;
 			children = (
-				EE0A4232275129F100934E82 /* Model */,
-				EE0A423327512A0800934E82 /* View */,
+				EE0A4232275129F100934E82 /* Models */,
+				EE0A42342751381E00934E82 /* Views */,
 				EE9B477C27130DC20005D65F /* ViewControllers */,
 				EE9B477A27130C910005D65F /* App */,
 				EE9B477927130C6C0005D65F /* Storyboards */,
