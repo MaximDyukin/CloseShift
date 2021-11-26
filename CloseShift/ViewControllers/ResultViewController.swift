@@ -22,7 +22,7 @@ class ResultViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func closeButtonPressed(_ sender: Any) {
+    @IBAction func closeButtonPressed() {
         dismiss(animated: true)
     }
 }

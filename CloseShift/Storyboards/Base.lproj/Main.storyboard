@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,82 +16,133 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Общая выручка" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-ng-8D1">
-                                <rect key="frame" x="16" y="30" width="288" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Pwz-Lg-0HW"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Безналичные" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oDM-vL-3Q5">
-                                <rect key="frame" x="16" y="72" width="288" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4lx-W8-RCW"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-4s-PWJ">
-                                <rect key="frame" x="138" y="114" width="44" height="31"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIO-tJ-DfV">
-                                <rect key="frame" x="138" y="195" width="44" height="31"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Расходы" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x5x-7g-UfZ">
-                                <rect key="frame" x="16" y="153" width="288" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eog-IZ-6GF"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFi-KT-gEr">
-                                <rect key="frame" x="16" y="234" width="288" height="33.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Рассчитать">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="AVa-0N-u2v" kind="presentation" identifier="" id="Ntw-d5-xMN"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPP-XK-NZj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6X-ue-cTY">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cXM-5Y-QDe">
+                                                <rect key="frame" x="16" y="30" width="288" height="76"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Общая выручка" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-ng-8D1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Pwz-Lg-0HW"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Безналичные" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oDM-vL-3Q5">
+                                                        <rect key="frame" x="0.0" y="42" width="288" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="4lx-W8-RCW"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-ll-dUn">
+                                                <rect key="frame" x="16" y="114" width="288" height="73"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIO-tJ-DfV">
+                                                        <rect key="frame" x="122" y="0.0" width="44" height="31"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="addTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQ6-4M-6bf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Расходы" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="x5x-7g-UfZ">
+                                                        <rect key="frame" x="0.0" y="39" width="288" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="eog-IZ-6GF"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="x5x-7g-UfZ" firstAttribute="leading" secondItem="Ssj-ll-dUn" secondAttribute="leading" id="rDX-bk-gZP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="x5x-7g-UfZ" secondAttribute="trailing" id="sqp-9e-Y7D"/>
+                                                    <constraint firstAttribute="bottom" secondItem="x5x-7g-UfZ" secondAttribute="bottom" id="wRY-VI-4SY"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-wP-htr">
+                                                <rect key="frame" x="16" y="195" width="288" height="72.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-4s-PWJ">
+                                                        <rect key="frame" x="122" y="0.0" width="44" height="31"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="addTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Mt-AN-tjh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFi-KT-gEr">
+                                                        <rect key="frame" x="0.0" y="39" width="288" height="33.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Рассчитать">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="AVa-0N-u2v" kind="presentation" identifier="" id="Ntw-d5-xMN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="TFi-KT-gEr" firstAttribute="leading" secondItem="aSt-wP-htr" secondAttribute="leading" id="GrT-IE-KKb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TFi-KT-gEr" secondAttribute="bottom" id="tl0-i6-MgO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TFi-KT-gEr" secondAttribute="trailing" id="zkA-vf-d2f"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstItem="Ssj-ll-dUn" firstAttribute="top" secondItem="cXM-5Y-QDe" secondAttribute="bottom" constant="8" id="7u2-h3-2qi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ssj-ll-dUn" secondAttribute="trailing" constant="16" id="JgQ-7Q-u80"/>
+                                            <constraint firstItem="cXM-5Y-QDe" firstAttribute="top" secondItem="i6X-ue-cTY" secondAttribute="top" constant="30" id="N9R-24-Paz"/>
+                                            <constraint firstItem="aSt-wP-htr" firstAttribute="leading" secondItem="i6X-ue-cTY" secondAttribute="leading" constant="16" id="Otf-Yf-JSi"/>
+                                            <constraint firstAttribute="trailing" secondItem="aSt-wP-htr" secondAttribute="trailing" constant="16" id="SVk-gs-ETE"/>
+                                            <constraint firstItem="cXM-5Y-QDe" firstAttribute="leading" secondItem="i6X-ue-cTY" secondAttribute="leading" constant="16" id="bK7-oX-6GQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cXM-5Y-QDe" secondAttribute="trailing" constant="16" id="e2h-Wn-pe4"/>
+                                            <constraint firstItem="Ssj-ll-dUn" firstAttribute="leading" secondItem="i6X-ue-cTY" secondAttribute="leading" constant="16" id="gfV-WP-7rI"/>
+                                            <constraint firstItem="aSt-wP-htr" firstAttribute="top" secondItem="Ssj-ll-dUn" secondAttribute="bottom" constant="8" id="sk8-V2-dOu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i6X-ue-cTY" firstAttribute="leading" secondItem="IPP-XK-NZj" secondAttribute="leading" id="2Zg-r0-u0I"/>
+                                    <constraint firstAttribute="trailing" secondItem="i6X-ue-cTY" secondAttribute="trailing" id="7oi-8C-TRd"/>
+                                    <constraint firstItem="i6X-ue-cTY" firstAttribute="top" secondItem="IPP-XK-NZj" secondAttribute="top" id="AgH-s0-vgP"/>
+                                    <constraint firstItem="i6X-ue-cTY" firstAttribute="width" secondItem="IPP-XK-NZj" secondAttribute="width" id="JXM-sB-TRA"/>
+                                    <constraint firstAttribute="bottom" secondItem="i6X-ue-cTY" secondAttribute="bottom" id="cCQ-Yj-b9U"/>
+                                    <constraint firstItem="i6X-ue-cTY" firstAttribute="height" secondItem="IPP-XK-NZj" secondAttribute="height" id="yxj-12-CVl"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TFi-KT-gEr" secondAttribute="trailing" constant="16" id="047-rU-6w7"/>
-                            <constraint firstItem="IFC-ng-8D1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9g7-in-Up4"/>
-                            <constraint firstItem="TFi-KT-gEr" firstAttribute="top" secondItem="KIO-tJ-DfV" secondAttribute="bottom" constant="8" id="COO-nq-Dsh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x5x-7g-UfZ" secondAttribute="trailing" constant="16" id="DfJ-pO-Wr2"/>
-                            <constraint firstItem="oDM-vL-3Q5" firstAttribute="top" secondItem="IFC-ng-8D1" secondAttribute="bottom" constant="8" id="HI7-bm-bjZ"/>
-                            <constraint firstItem="WBv-4s-PWJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PFw-os-aYM"/>
-                            <constraint firstItem="x5x-7g-UfZ" firstAttribute="top" secondItem="WBv-4s-PWJ" secondAttribute="bottom" constant="8" id="QkK-Up-qMS"/>
-                            <constraint firstItem="WBv-4s-PWJ" firstAttribute="top" secondItem="oDM-vL-3Q5" secondAttribute="bottom" constant="8" id="QqK-13-vvb"/>
-                            <constraint firstItem="oDM-vL-3Q5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Usj-0b-a9q"/>
-                            <constraint firstItem="KIO-tJ-DfV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VUi-JV-eDp"/>
-                            <constraint firstItem="TFi-KT-gEr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="a9A-2Z-t0N"/>
-                            <constraint firstItem="x5x-7g-UfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="e6x-0T-QEs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oDM-vL-3Q5" secondAttribute="trailing" constant="16" id="lpc-JM-amu"/>
-                            <constraint firstItem="KIO-tJ-DfV" firstAttribute="top" secondItem="x5x-7g-UfZ" secondAttribute="bottom" constant="8" id="q2k-GR-7w3"/>
-                            <constraint firstItem="IFC-ng-8D1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="yaa-Bz-Kvm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IFC-ng-8D1" secondAttribute="trailing" constant="16" id="z0Q-Uf-lgm"/>
+                            <constraint firstItem="IPP-XK-NZj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="S5W-dP-pG1"/>
+                            <constraint firstItem="IPP-XK-NZj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aPu-xd-yyv"/>
+                            <constraint firstItem="IPP-XK-NZj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ff8-JP-xMP"/>
+                            <constraint firstItem="IPP-XK-NZj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m3d-C8-Npu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="expenses" destination="x5x-7g-UfZ" id="m67-t7-CbT"/>
+                        <outlet property="firstStack" destination="cXM-5Y-QDe" id="oqW-DN-2mQ"/>
                         <outlet property="nonCash" destination="oDM-vL-3Q5" id="q2n-Hs-gMm"/>
+                        <outlet property="scrollView" destination="IPP-XK-NZj" id="VqW-ww-qnZ"/>
                         <outlet property="totalRevenue" destination="IFC-ng-8D1" id="Of8-M2-f3E"/>
                     </connections>
                 </viewController>
@@ -112,7 +163,7 @@
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="closeButtonPressed:" destination="AVa-0N-u2v" eventType="touchUpInside" id="OCU-mR-InG"/>
+                                    <action selector="closeButtonPressed" destination="AVa-0N-u2v" eventType="touchUpInside" id="ffK-tM-ajF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общая выручка" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYf-yF-wkf">

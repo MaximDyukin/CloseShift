@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE9A96BE274D1BD000B2F7A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9A96BD274D1BD000B2F7A7 /* CustomTextField.swift */; };
 		EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47652713097B0005D65F /* AppDelegate.swift */; };
 		EE9B47682713097B0005D65F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47672713097B0005D65F /* SceneDelegate.swift */; };
 		EE9B476A2713097B0005D65F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47692713097B0005D65F /* MainViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE9A96BD274D1BD000B2F7A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EE9B47622713097B0005D65F /* CloseShift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloseShift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9B47652713097B0005D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9B47672713097B0005D65F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE9A96BA274D17BF00B2F7A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE9A96BD274D1BD000B2F7A7 /* CustomTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EE9B47592713097B0005D65F = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9B477D271327530005D65F /* Models */,
+				EE9A96BA274D17BF00B2F7A7 /* View */,
 				EE9B477C27130DC20005D65F /* ViewControllers */,
 				EE9B477927130C6C0005D65F /* Storyboards */,
 				EE9B477A27130C910005D65F /* App */,
@@ -186,6 +197,7 @@
 			files = (
 				EE9B478127133B440005D65F /* ResultViewController.swift in Sources */,
 				EE9B477F271328D80005D65F /* XReport.swift in Sources */,
+				EE9A96BE274D1BD000B2F7A7 /* CustomTextField.swift in Sources */,
 				EE9B476A2713097B0005D65F /* MainViewController.swift in Sources */,
 				EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */,
 				EE9B47682713097B0005D65F /* SceneDelegate.swift in Sources */,
