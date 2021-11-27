@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE0A4237275145BA00934E82 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A4236275145BA00934E82 /* CustomTextField.swift */; };
 		EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47652713097B0005D65F /* AppDelegate.swift */; };
 		EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47692713097B0005D65F /* CalculationViewController.swift */; };
 		EE9B476F2713097C0005D65F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9B476E2713097C0005D65F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE0A4236275145BA00934E82 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EE9B47622713097B0005D65F /* CloseShift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloseShift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9B47652713097B0005D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9B47692713097B0005D65F /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
@@ -33,18 +35,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE0A4232275129F100934E82 /* Models */ = {
+		EE0A42342751381E00934E82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE0A4236275145BA00934E82 /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE0A42352751457600934E82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		EE0A42342751381E00934E82 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		EE9B47592713097B0005D65F = {
@@ -66,7 +69,7 @@
 		EE9B47642713097B0005D65F /* CloseShift */ = {
 			isa = PBXGroup;
 			children = (
-				EE0A4232275129F100934E82 /* Models */,
+				EE0A42352751457600934E82 /* Models */,
 				EE0A42342751381E00934E82 /* Views */,
 				EE9B477C27130DC20005D65F /* ViewControllers */,
 				EE9B477A27130C910005D65F /* App */,
@@ -181,6 +184,7 @@
 			files = (
 				EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */,
 				EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */,
+				EE0A4237275145BA00934E82 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,36 +9,34 @@ import UIKit
 
 class CalculationViewController: UIViewController {
     
-    private let nonCashTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.font = .systemFont(ofSize: 15, weight: .regular)
-        textField.clearButtonMode = .always
-        textField.keyboardType = .decimalPad
-        textField.placeholder = "Безналичные"
-        return textField
-    }()
-
-    private let expensesTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.font = .systemFont(ofSize: 15, weight: .regular)
-        textField.clearButtonMode = .always
-        textField.keyboardType = .decimalPad
-        textField.placeholder = "Расходы"
-        return textField
-    }()
+    private let revenueTextField = CustomTextField(specificPlaceholder: .revenue)
     
-    private let addButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .cyan
+    let nonCashStack = UIStackView(arrangedSubviews: [
+        
+        CustomTextField(specificPlaceholder: .nonCash),
+        CustomTextField(specificPlaceholder: .nonCash),
+        
+        UIStackView(arrangedSubviews: [
+            CustomTextField(specificPlaceholder: .expenses),
+            CustomTextField(specificPlaceholder: .expenses)
+        ])
+    ])
+    
+    private let expensesTextField = CustomTextField(specificPlaceholder: .expenses)
+    
+    private let buttonAdd: UIButton = {
+        let button = UIButton(type: .contactAdd)
+        button.tintColor = .systemIndigo
+        button.addTarget(self, action: #selector(addTF), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
-        setupSubviews(nonCashTextField)
+        setupSubviews(revenueTextField, buttonAdd, nonCashStack)
+        nonCashStack.spacing = 8
+        nonCashStack.axis = .vertical
         setConstraints()
     }
     
@@ -49,10 +47,25 @@ class CalculationViewController: UIViewController {
     }
     
     private func setConstraints() {
-        nonCashTextField.translatesAutoresizingMaskIntoConstraints = false
-        nonCashTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
-        nonCashTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        nonCashTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        revenueTextField.translatesAutoresizingMaskIntoConstraints = false
+        revenueTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        revenueTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        revenueTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        
+        buttonAdd.translatesAutoresizingMaskIntoConstraints = false
+        buttonAdd.topAnchor.constraint(equalTo: revenueTextField.bottomAnchor, constant: 16).isActive = true
+        buttonAdd.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        nonCashStack.translatesAutoresizingMaskIntoConstraints = false
+        nonCashStack.topAnchor.constraint(equalTo: buttonAdd.bottomAnchor, constant: 16).isActive = true
+        nonCashStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        nonCashStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+    }
+    
+    @objc private func addTF() {
+        UIView.animate(withDuration: 0.2) {
+            self.nonCashStack.transform = self.nonCashStack.transform.translatedBy(x: 0, y: 50)
+        }
     }
 }
 
