@@ -12,6 +12,7 @@
 		EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47692713097B0005D65F /* CalculationViewController.swift */; };
 		EE9B476F2713097C0005D65F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9B476E2713097C0005D65F /* Assets.xcassets */; };
 		EE9B47722713097C0005D65F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9B47702713097C0005D65F /* LaunchScreen.storyboard */; };
+		EECAA1EE2759050200251B53 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECAA1ED2759050200251B53 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EE9B476E2713097C0005D65F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE9B47712713097C0005D65F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE9B47732713097C0005D65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EECAA1ED2759050200251B53 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,15 +41,9 @@
 			isa = PBXGroup;
 			children = (
 				EE0A4236275145BA00934E82 /* CustomTextField.swift */,
+				EECAA1ED2759050200251B53 /* CustomButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		EE0A42352751457600934E82 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		EE9B47592713097B0005D65F = {
@@ -69,7 +65,6 @@
 		EE9B47642713097B0005D65F /* CloseShift */ = {
 			isa = PBXGroup;
 			children = (
-				EE0A42352751457600934E82 /* Models */,
 				EE0A42342751381E00934E82 /* Views */,
 				EE9B477C27130DC20005D65F /* ViewControllers */,
 				EE9B477A27130C910005D65F /* App */,
@@ -182,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECAA1EE2759050200251B53 /* CustomButton.swift in Sources */,
 				EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */,
 				EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */,
 				EE0A4237275145BA00934E82 /* CustomTextField.swift in Sources */,
