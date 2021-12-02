@@ -14,6 +14,7 @@ class CalculationViewController: UIViewController {
     let nonCashStack = UIStackView(arrangedSubviews: [
         CustomTextField(specificPlaceholder: .nonCash),
         CustomTextField(specificPlaceholder: .nonCash),
+        CustomButton()
     ])
     
     private let expensesTextField = CustomTextField(specificPlaceholder: .expenses)

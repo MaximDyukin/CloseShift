@@ -12,7 +12,10 @@ class CustomButton: UIButton {
     init() {
         super.init(frame: .zero)
         setTitle("РАССЧИТАТЬ", for: .normal)
+        setTitleColor(.systemIndigo, for: .normal)
         titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 5
         
     }
     
