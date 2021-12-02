@@ -9,32 +9,31 @@ import UIKit
 
 class CalculationViewController: UIViewController {
     
-    private let revenueTextField = CustomTextField(specificPlaceholder: .revenue)
-    
-    let nonCashStack = UIStackView(arrangedSubviews: [
-        CustomTextField(specificPlaceholder: .nonCash),
-        CustomTextField(specificPlaceholder: .nonCash),
-        CustomButton()
+    // MARK: - Private properties
+    private let revenueAndNonCashTF = CustomStackView(arrangedSubviews: [
+        CustomTextField(.revenue),
+        CustomTextField(.nonCash)
     ])
     
-    private let expensesTextField = CustomTextField(specificPlaceholder: .expenses)
+    private let expensesStack = CustomStackView(arrangedSubviews: [
+        CustomButton(title: .addTerminal, action: #selector(addTerminal)),
+        CustomTextField(.expenses)
+    ])
     
-    private let buttonAdd: UIButton = {
-        let button = UIButton(type: .contactAdd)
-        button.tintColor = .systemIndigo
-        button.addTarget(self, action: #selector(addTF), for: .touchUpInside)
-        return button
-    }()
+    private let expensesAndCalculateButtonsStack = CustomStackView(arrangedSubviews: [
+        CustomButton(title: .addExpense, action: #selector(addExpenses)),
+        CustomButton(title: .calculate, action: #selector(calculate))
+    ])
     
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
-        setupSubviews(revenueTextField, buttonAdd, nonCashStack)
-        nonCashStack.spacing = 8
-        nonCashStack.axis = .vertical
+        setupSubviews(revenueAndNonCashTF, expensesStack, expensesAndCalculateButtonsStack)
         setConstraints()
     }
     
+    // MARK: - Private func
     private func setupSubviews(_ subviews: UIView...) {
         subviews.forEach { subview in
             view.addSubview(subview)
@@ -42,25 +41,32 @@ class CalculationViewController: UIViewController {
     }
     
     private func setConstraints() {
-        revenueTextField.translatesAutoresizingMaskIntoConstraints = false
-        revenueTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
-        revenueTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        revenueTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        revenueAndNonCashTF.translatesAutoresizingMaskIntoConstraints = false
+        revenueAndNonCashTF.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        revenueAndNonCashTF.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        revenueAndNonCashTF.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
-        buttonAdd.translatesAutoresizingMaskIntoConstraints = false
-        buttonAdd.topAnchor.constraint(equalTo: revenueTextField.bottomAnchor, constant: 16).isActive = true
-        buttonAdd.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        expensesStack.translatesAutoresizingMaskIntoConstraints = false
+        expensesStack.topAnchor.constraint(equalTo: revenueAndNonCashTF.bottomAnchor, constant: 8).isActive = true
+        expensesStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        expensesStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
-        nonCashStack.translatesAutoresizingMaskIntoConstraints = false
-        nonCashStack.topAnchor.constraint(equalTo: buttonAdd.bottomAnchor, constant: 16).isActive = true
-        nonCashStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        nonCashStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        expensesAndCalculateButtonsStack.translatesAutoresizingMaskIntoConstraints = false
+        expensesAndCalculateButtonsStack.topAnchor.constraint(equalTo: expensesStack.bottomAnchor, constant: 8).isActive = true
+        expensesAndCalculateButtonsStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        expensesAndCalculateButtonsStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
     }
     
-    @objc private func addTF() {
-        UIView.animate(withDuration: 0.2) {
-            self.nonCashStack.transform = self.nonCashStack.transform.translatedBy(x: 0, y: 50)
-        }
+    @objc private func addTerminal() {
+        revenueAndNonCashTF.addArrangedSubview(CustomTextField(.nonCash))
+    }
+    
+    @objc private func addExpenses() {
+        expensesStack.addArrangedSubview(CustomTextField(.expenses))
+    }
+    
+    @objc private func calculate() {
+        
     }
 }
 

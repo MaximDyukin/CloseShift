@@ -14,16 +14,17 @@ enum Placeholder: String {
 }
 
 class CustomTextField: UITextField {
-    private let specificPlaceholder: Placeholder
     
-    init(specificPlaceholder: Placeholder) {
-        self.specificPlaceholder = specificPlaceholder
+    private let specific: Placeholder
+    
+    init(_ specific: Placeholder) {
+        self.specific = specific
         super.init(frame: .zero)
         borderStyle = .roundedRect
         font = .systemFont(ofSize: 15, weight: .regular)
         clearButtonMode = .always
         keyboardType = .decimalPad
-        placeholder = specificPlaceholder.rawValue
+        placeholder = specific.rawValue
     }
     
     required init?(coder: NSCoder) {

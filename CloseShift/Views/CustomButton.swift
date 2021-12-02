@@ -7,16 +7,22 @@
 
 import UIKit
 
+enum Title: String {
+    case calculate = "РАССЧИТАТЬ"
+    case addTerminal = "ДОБАВИТЬ ТЕРМИНАЛ"
+    case addExpense = "ДОБАВИТЬ РАСХОДЫ"
+}
+
 class CustomButton: UIButton {
     
-    init() {
+    init(title: Title, action: Selector) {
         super.init(frame: .zero)
-        setTitle("РАССЧИТАТЬ", for: .normal)
+        setTitle(title.rawValue, for: .normal)
         setTitleColor(.systemIndigo, for: .normal)
-        titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+        titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
         backgroundColor = .systemBackground
         layer.cornerRadius = 5
-        
+        addTarget(nil, action: action, for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
