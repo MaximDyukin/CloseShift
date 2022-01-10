@@ -10,7 +10,7 @@ import UIKit
 class CalculationViewController: UIViewController {
     
     // MARK: - Private properties
-    private let revenueAndNonCashTF = CustomStackView(arrangedSubviews: [
+    private let stackNonCash = CustomStackView(arrangedSubviews: [
         CustomTextField(.revenue),
         CustomTextField(.nonCash)
     ])
@@ -20,7 +20,7 @@ class CalculationViewController: UIViewController {
         CustomTextField(.expenses)
     ])
     
-    private let expensesAndCalculateButtonsStack = CustomStackView(arrangedSubviews: [
+    private let buttonsStack = CustomStackView(arrangedSubviews: [
         CustomButton(title: .addExpense, action: #selector(addExpenses)),
         CustomButton(title: .calculate, action: #selector(calculate))
     ])
@@ -29,8 +29,10 @@ class CalculationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
-        setupSubviews(revenueAndNonCashTF, expensesStack, expensesAndCalculateButtonsStack)
-        setConstraints()
+        setupSubviews(stackNonCash, expensesStack, buttonsStack)
+        setConstraintsForStackNonCash()
+        setConstraintsForExpensesStack()
+        setConstraintsForButtonsStack()
     }
     
     // MARK: - Private func
@@ -40,33 +42,59 @@ class CalculationViewController: UIViewController {
         }
     }
     
-    private func setConstraints() {
-        revenueAndNonCashTF.translatesAutoresizingMaskIntoConstraints = false
-        revenueAndNonCashTF.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
-        revenueAndNonCashTF.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        revenueAndNonCashTF.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+    private func setConstraintsForStackNonCash() {
+        stackNonCash.translatesAutoresizingMaskIntoConstraints = false
         
-        expensesStack.translatesAutoresizingMaskIntoConstraints = false
-        expensesStack.topAnchor.constraint(equalTo: revenueAndNonCashTF.bottomAnchor, constant: 8).isActive = true
-        expensesStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        expensesStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        
-        expensesAndCalculateButtonsStack.translatesAutoresizingMaskIntoConstraints = false
-        expensesAndCalculateButtonsStack.topAnchor.constraint(equalTo: expensesStack.bottomAnchor, constant: 8).isActive = true
-        expensesAndCalculateButtonsStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        expensesAndCalculateButtonsStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        NSLayoutConstraint.activate([
+            stackNonCash.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            stackNonCash.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            stackNonCash.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+        ])
     }
     
+    private func setConstraintsForExpensesStack() {
+        expensesStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            expensesStack.topAnchor.constraint(equalTo: stackNonCash.bottomAnchor, constant: 8),
+            expensesStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            expensesStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+        ])
+    }
+    
+    private func setConstraintsForButtonsStack() {
+        buttonsStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            buttonsStack.topAnchor.constraint(equalTo: expensesStack.bottomAnchor, constant: 8),
+            buttonsStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            buttonsStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+        ])
+    }
+    
+    // MARK: - Actions of buttons
     @objc private func addTerminal() {
-        revenueAndNonCashTF.addArrangedSubview(CustomTextField(.nonCash))
+        expensesStack.transform = expensesStack.transform.translatedBy(x: 0, y: -42)
+        buttonsStack.transform = buttonsStack.transform.translatedBy(x: 0, y: -42)
+        
+        UIView.animate(withDuration: 0.4) {
+            self.stackNonCash.addArrangedSubview(CustomTextField(.nonCash))
+            self.expensesStack.transform = self.expensesStack.transform.translatedBy(x: 0, y: 42)
+            self.buttonsStack.transform = self.buttonsStack.transform.translatedBy(x: 0, y: 42)
+        }
     }
     
     @objc private func addExpenses() {
-        expensesStack.addArrangedSubview(CustomTextField(.expenses))
+        buttonsStack.transform = buttonsStack.transform.translatedBy(x: 0, y: -42)
+
+        UIView.animate(withDuration: 0.4) {
+            self.expensesStack.addArrangedSubview(CustomTextField(.expenses))
+            self.buttonsStack.transform = self.buttonsStack.transform.translatedBy(x: 0, y: 42)
+        }
     }
     
     @objc private func calculate() {
-        
+        let resultVC = ResultViewController()
+        present(resultVC, animated: true)
     }
 }
-

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE0A4237275145BA00934E82 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A4236275145BA00934E82 /* CustomTextField.swift */; };
+		EE56E8E7278C5D9E00B09012 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56E8E6278C5D9E00B09012 /* ResultViewController.swift */; };
 		EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47652713097B0005D65F /* AppDelegate.swift */; };
 		EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B47692713097B0005D65F /* CalculationViewController.swift */; };
 		EE9B476F2713097C0005D65F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9B476E2713097C0005D65F /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		EE0A4236275145BA00934E82 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EE56E8E6278C5D9E00B09012 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		EE9B47622713097B0005D65F /* CloseShift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloseShift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9B47652713097B0005D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9B47692713097B0005D65F /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9B47692713097B0005D65F /* CalculationViewController.swift */,
+				EE56E8E6278C5D9E00B09012 /* ResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				EE9B476A2713097B0005D65F /* CalculationViewController.swift in Sources */,
 				EE9B47662713097B0005D65F /* AppDelegate.swift in Sources */,
 				EE0A4237275145BA00934E82 /* CustomTextField.swift in Sources */,
+				EE56E8E7278C5D9E00B09012 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import AudioToolbox
 
 enum Title: String {
     case calculate = "РАССЧИТАТЬ"
@@ -28,4 +29,12 @@ class CustomButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    func buttonAnimation() {
+//        AudioServicesPlaySystemSound(SystemSoundID(1104))
+//        backgroundColor = .systemGray4
+//        UIView.animate(withDuration: 0.2) {
+//            self.backgroundColor = .white
+//        }
+//    }
 }
